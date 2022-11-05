@@ -9,7 +9,7 @@ package.loaded["dev"] = nil
 -- require file location plugin safe
 local status, FileLocation = pcall(require, "nvim-file-location")
 if not status then
-	vim.notify("No module detected", vim.log.levels.ERROR, { title = "File Location" })
+	vim.notify("Error: No module detected.", vim.log.levels.ERROR, { title = "File Location" })
 	return
 end
 
