@@ -23,13 +23,17 @@ end
 
 -- copy file location
 function FileLocation.copy_file_location()
-	local path_to_file_line = FileLocation.get_path_to_file_line(global_config.mode, global_config.add_line)
-	utils.copy_to_clipboard(path_to_file_line)
+	local file_location = FileLocation.get_file_location(global_config.mode, global_config.add_line)
+	utils.copy_to_clipboard(file_location)
 end
 
--- get path to file
-function FileLocation.get_path_to_file_line(mode, add_line)
-	return utils.get_path_to_file_line(mode, add_line)
+-- get file location
+function FileLocation.get_file_location(mode, add_line)
+	-- add defaults for optional parameters
+	mode = (mode == nil and global_config.mode) or mode
+	add_line = (add_line == nil and global_config.add_line) or add_line
+
+	return utils.get_file_location(mode, add_line)
 end
 
 -- export plugin

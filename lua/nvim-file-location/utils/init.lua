@@ -1,5 +1,5 @@
--- returns the file location including the line number
-local function get_path_to_file_line(mode, add_line)
+-- returns the file location
+local function get_file_location(mode, add_line)
 	local absolute_file_location = vim.fn.expand("%")
 
 	-- absolute path / no line
@@ -26,9 +26,9 @@ local function get_path_to_file_line(mode, add_line)
 	return project_file_location .. ":" .. current_file_line
 end
 
--- copy path to file to the clipboard
-local function copy_to_clipboard(path_to_file_line)
-	local status, _ = pcall(vim.cmd, string.format([[ let @*="%s" ]], path_to_file_line))
+-- copies the file location to the clipboard
+local function copy_to_clipboard(file_location)
+	local status, _ = pcall(vim.cmd, string.format([[ let @*="%s" ]], file_location))
 	if not status then
 		vim.notify("Error: Location could not be copied.", vim.log.levels.ERROR, { title = "File Location" })
 		return
@@ -39,6 +39,6 @@ end
 
 -- export utils
 return {
-	get_path_to_file_line = get_path_to_file_line,
+	get_file_location = get_file_location,
 	copy_to_clipboard = copy_to_clipboard,
 }
