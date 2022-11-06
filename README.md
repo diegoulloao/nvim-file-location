@@ -128,7 +128,7 @@ NvimFileLocation.copy_file_location(mode, add_line)
 
 **[nvim-notify](https://github.com/rcarriga/nvim-notify)**
 
-It's highly recommended to use it togheter with nvim-notify in order to get nice notifications 😍
+It's highly recommended to use it together with nvim-notify in order to get nice notifications 😍
 
 ---
 
