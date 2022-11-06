@@ -94,7 +94,7 @@ To add keymaps for differents modes do it like:
 
 **Lua**
 ```lua
-vim.keymmap.set("n", "<leader>fl",  "<cmd>lua NvimFileLocation.copy_file_location('absolute', true)<cr>")
+vim.keymap.set("n", "<leader>fl",  "<cmd>lua NvimFileLocation.copy_file_location('absolute', true)<cr>")
 ```
 
 **Vimscript**
