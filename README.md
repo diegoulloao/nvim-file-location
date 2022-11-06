@@ -7,7 +7,7 @@
 
 ```
 
-Simple Nvim plugin that copies the exact file location where the cursor is 😼 - Written in lua.
+Simple Nvim plugin that copies the exact file location where the cursor is 😼 - Written in Lua.
 
 ---
 
