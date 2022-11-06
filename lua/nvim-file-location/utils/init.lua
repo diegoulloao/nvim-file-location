@@ -9,7 +9,7 @@ local Utils = {}
 -- @param add_line boolean
 -- @return file_location string
 function Utils.get_file_location(mode, add_line)
-  local absolute_file_location = vim.fn.expand("%")
+  local absolute_file_location = vim.fn.expand("%:p")
 
   -- absolute path / no line
   if mode == "absolute" and not add_line then
