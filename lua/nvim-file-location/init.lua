@@ -40,9 +40,15 @@ end
 
 --------
 -- copy file location
+-- @param mode string
+-- @param add_line boolean
 -- @return nil
-function FileLocation.copy_file_location()
-  local file_location = FileLocation.get_file_location(global_config.mode, global_config.add_line)
+function FileLocation.copy_file_location(mode, add_line)
+  -- add defaults for optional parameters
+  mode = (mode == nil and global_config.mode) or mode
+  add_line = (add_line == nil and global_config.add_line) or add_line
+
+  local file_location = FileLocation.get_file_location(mode, add_line)
   utils.copy_to_clipboard(file_location)
 end
 
@@ -58,6 +64,13 @@ function FileLocation.get_file_location(mode, add_line)
 
   return utils.get_file_location(mode, add_line)
 end
+
+--------
+-- globally exposed file location functions
+-- @global
+NvimFileLocation = {
+  copy_file_location = FileLocation.copy_file_location,
+}
 
 -- export plugin
 return FileLocation
