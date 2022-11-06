@@ -91,8 +91,20 @@ EOF
 
 ## Custom keymaps
 To add keymaps for differents modes do it like:
+
+**Lua**
 ```lua
-vim.keymmap.set("n", "<cmd>nvim")
+vim.keymmap.set("n", "<leader>fl",  "<cmd>lua NvimFileLocation.copy_file_location('absolute', true)<cr>")
+```
+
+**Vimscript**
+```vim
+nnoremap <leader>fl :NvimFileLocation.copy_file_location("absolute", true)<cr>
+```
+
+Where params are:
+```lua
+NvimFileLocation.copy_file_location(mode, add_line)
 ```
 
 # 4. Integrations
