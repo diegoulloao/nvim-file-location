@@ -1,4 +1,6 @@
+--------
 -- module config
+-- @module Config
 local Config = {}
 
 -- default config
@@ -8,7 +10,10 @@ local default_config = {
   add_line = true,
 }
 
+--------
 -- setup config
+-- @param user_config table
+-- @return config table
 function Config.setup(user_config)
   -- extend default config with user config
   local config = vim.tbl_deep_extend("keep", user_config or {}, default_config)

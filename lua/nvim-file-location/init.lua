@@ -1,3 +1,11 @@
+---------
+-- @brief [[
+-- Plugin that copies the exact file location where the cursor is
+-- @brief ]]
+
+--------
+-- @tag nvim-file-location
+
 -- require
 local config = require("nvim-file-location.config")
 local utils = require("nvim-file-location.utils")
@@ -5,10 +13,16 @@ local utils = require("nvim-file-location.utils")
 -- plugin config
 local global_config
 
+--------
 -- main module
+-- @module FileLocation
 local FileLocation = {}
+FileLocation._VERSION = "1.0.0"
 
+--------
 -- setup plugin
+-- @param user_config table
+-- @return nil
 function FileLocation.setup(user_config)
   global_config = FileLocation.config(user_config)
 
@@ -16,18 +30,27 @@ function FileLocation.setup(user_config)
   vim.keymap.set("n", global_config.keymap, FileLocation.copy_file_location)
 end
 
+--------
 -- config plugin
+-- @param user_config table
+-- @return config table
 function FileLocation.config(user_config)
   return config.setup(user_config)
 end
 
+--------
 -- copy file location
+-- @return nil
 function FileLocation.copy_file_location()
   local file_location = FileLocation.get_file_location(global_config.mode, global_config.add_line)
   utils.copy_to_clipboard(file_location)
 end
 
+--------
 -- get file location
+-- @param mode string
+-- @param add_line boolean
+-- @return file_location string
 function FileLocation.get_file_location(mode, add_line)
   -- add defaults for optional parameters
   mode = (mode == nil and global_config.mode) or mode

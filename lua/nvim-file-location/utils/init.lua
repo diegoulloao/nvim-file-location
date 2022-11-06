@@ -1,7 +1,13 @@
+--------
 -- module utils
+-- @module Utils
 local Utils = {}
 
+--------
 -- returns the file location
+-- @param mode string
+-- @param add_line boolean
+-- @return file_location string
 function Utils.get_file_location(mode, add_line)
   local absolute_file_location = vim.fn.expand("%")
 
@@ -29,7 +35,10 @@ function Utils.get_file_location(mode, add_line)
   return project_file_location .. ":" .. current_file_line
 end
 
+--------
 -- copies the file location to the clipboard
+-- @param file_location string
+-- @return nil
 function Utils.copy_to_clipboard(file_location)
   local status, _ = pcall(vim.cmd, string.format([[ let @*="%s" ]], file_location))
   if not status then
