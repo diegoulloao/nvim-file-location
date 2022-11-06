@@ -1,0 +1,7 @@
+# Created by https://www.toptal.com/developers/gitignore/api/lua,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=lua,macos
+
+# General
+.DS_Store
+
+# End of https://www.toptal.com/developers/gitignore/api/lua,macos
