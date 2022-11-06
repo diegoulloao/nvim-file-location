@@ -13,7 +13,7 @@ Simple Nvim plugin that copies the exact file location where the cursor is 😼 
 ![nvim-file-location](https://user-images.githubusercontent.com/45423661/200167439-cbdc2a41-8e45-466b-b74c-83a8b474a24b.gif)
 
 # 1. Prerequisites
-Make sure to have the clipboard enabled in your vim configuation:
+Make sure to have the clipboard enabled in your nvim configuration:
 
 **Lua**
 ```lua
@@ -89,10 +89,32 @@ lua << EOF
 EOF
 ```
 
+## Custom keymaps
+To add keymaps for differents modes do it like:
+```lua
+vim.keymmap.set("n", "<cmd>nvim")
+```
+
 # 4. Integrations
 **[nvim-notify](https://github.com/rcarriga/nvim-notify)**
 
 It's highly recommended to use it togheter with nvim-notify in order to get nice notifications 😍
+
+# 5. Development
+Navigate to the project folder and open nvim with:
+
+```bash
+nvim --cmd "set rtp+=./"
+```
+
+Then inside nvim call the `dev/init.lua` file once:
+```
+:luafile dev/init.lua
+```
+## Reloading plugin
+In order to reload the plugin press `<leader>rr`
+
+Please check the [dev/init.lua](https://github.com/diegoulloao/nvim-file-location/blob/dev/dev/init.lua#L17) keymaps for more details
 
 ---
 **diegoulloao · 2022**
