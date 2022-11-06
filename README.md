@@ -72,7 +72,7 @@ nvim_file_location.setup({
 })
 ```
 
-### modes [string]
+### mode [string]
 
 - workdir: `pages/index.ts:25`
 - absolute: `/Users/diego/Desktop/next-js-app/pages/index.ts:25`
