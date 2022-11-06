@@ -112,21 +112,5 @@ NvimFileLocation.copy_file_location(mode, add_line)
 
 It's highly recommended to use it togheter with nvim-notify in order to get nice notifications 😍
 
-# 5. Development
-Navigate to the project folder and open nvim with:
-
-```bash
-nvim --cmd "set rtp+=./"
-```
-
-Then inside nvim call the `dev/init.lua` file once:
-```
-:luafile dev/init.lua
-```
-## Reloading plugin
-In order to reload the plugin press `<leader>rr`
-
-Please check the [dev/init.lua](https://github.com/diegoulloao/nvim-file-location/blob/dev/dev/init.lua#L17) keymaps for more details
-
 ---
 **diegoulloao · 2022**
