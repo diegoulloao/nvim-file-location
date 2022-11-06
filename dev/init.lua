@@ -9,8 +9,8 @@ package.loaded["dev"] = nil
 -- require file location plugin safe
 local status, FileLocation = pcall(require, "nvim-file-location")
 if not status then
-	vim.notify("Error: No module detected.", vim.log.levels.ERROR, { title = "File Location" })
-	return
+  vim.notify("Error: No module detected.", vim.log.levels.ERROR, { title = "File Location" })
+  return
 end
 
 -- set development keymaps
@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>rr", "<cmd>luafile dev/init.lua<cr>")
 
 -- Init plugin
 FileLocation.setup({
-	-- user options
+  -- user options
 })
 
 -- success message
