@@ -1,5 +1,8 @@
+-- module utils
+local Utils = {}
+
 -- returns the file location
-local function get_file_location(mode, add_line)
+function Utils.get_file_location(mode, add_line)
   local absolute_file_location = vim.fn.expand("%")
 
   -- absolute path / no line
@@ -27,7 +30,7 @@ local function get_file_location(mode, add_line)
 end
 
 -- copies the file location to the clipboard
-local function copy_to_clipboard(file_location)
+function Utils.copy_to_clipboard(file_location)
   local status, _ = pcall(vim.cmd, string.format([[ let @*="%s" ]], file_location))
   if not status then
     vim.notify("Error: Location could not be copied.", vim.log.levels.ERROR, { title = "File Location" })
@@ -37,8 +40,5 @@ local function copy_to_clipboard(file_location)
   vim.notify("Copied to your clipboard!", vim.log.levels.INFO, { title = "File Location" })
 end
 
--- export utils
-return {
-  get_file_location = get_file_location,
-  copy_to_clipboard = copy_to_clipboard,
-}
+-- export module utils
+return Utils
