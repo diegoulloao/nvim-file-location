@@ -13,7 +13,7 @@ Simple Nvim plugin that copies the exact file location where the cursor is 😼 
 
 ![nvim-file-location](https://user-images.githubusercontent.com/45423661/200167439-cbdc2a41-8e45-466b-b74c-83a8b474a24b.gif)
 
-# 1. Prerequisites
+# 1. Prerequisites 📦
 
 Make sure to have the clipboard enabled in your nvim configuration:
 
@@ -31,7 +31,7 @@ vim.opt.clipboard:append("unnamedplus")
 set clipboard=unnamedplus
 ```
 
-# 2. Installation
+# 2. Installation ⚡️
 
 **Packer**
 
@@ -51,7 +51,7 @@ call dein#call("diegoulloao/nvim-file-location")
 Plug "diegoulloao/nvim-file-location"
 ```
 
-# 3. Usage
+# 3. Usage ✨
 
 Call the setup function passing your custom options inside the table if necessary:
 
@@ -124,7 +124,7 @@ Where params are:
 NvimFileLocation.copy_file_location(mode, add_line)
 ```
 
-# 4. Integrations
+# 4. Integrations 💎
 
 **[nvim-notify](https://github.com/rcarriga/nvim-notify)**
 
