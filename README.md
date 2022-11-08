@@ -69,6 +69,7 @@ nvim_file_location.setup({
   keymap = "<leader>L",
   mode = "workdir", -- options: workdir | absolute
   add_line = true,
+  add_column = false,
 })
 ```
 
@@ -84,6 +85,15 @@ Let's take the workdir mode for this example:
 - `true`: `pages/index.ts:25`
 - `false`: `pages/index.ts`
 
+### add_column [boolean]
+
+It works only if `add_line` is `true`
+
+Let's take the workdir mode for this example:
+
+- `true`: `pages/index.ts:25:11`
+- `false`: `pages/index.ts:25`
+
 **Defaults options:**
 
 ```lua
@@ -91,6 +101,7 @@ Let's take the workdir mode for this example:
   keymap = "<leader>L",
   mode = "workdir",
   add_line = true,
+  add_column = false,
 }
 ```
 
@@ -109,19 +120,19 @@ To add keymaps for differents modes do it like:
 **Lua**
 
 ```lua
-vim.keymap.set("n", "<leader>fl",  "<cmd>lua NvimFileLocation.copy_file_location('absolute', true)<cr>")
+vim.keymap.set("n", "<leader>fl",  "<cmd>lua NvimFileLocation.copy_file_location('absolute', true, false)<cr>")
 ```
 
 **Vimscript**
 
 ```vim
-nnoremap <leader>fl :lua NvimFileLocation.copy_file_location("absolute", true)<cr>
+nnoremap <leader>fl :lua NvimFileLocation.copy_file_location("absolute", true, false)<cr>
 ```
 
 Where params are:
 
 ```lua
-NvimFileLocation.copy_file_location(mode, add_line)
+NvimFileLocation.copy_file_location(mode, add_line, add_column)
 ```
 
 # 4. Integrations 💎
