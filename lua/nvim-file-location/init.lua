@@ -17,7 +17,7 @@ local global_config
 -- main module
 -- @module FileLocation
 local FileLocation = {}
-FileLocation._VERSION = "1.0.0"
+FileLocation._VERSION = "1.1.0"
 
 --------
 -- setup plugin
@@ -42,14 +42,16 @@ end
 -- copy file location
 -- @param mode string
 -- @param add_line boolean
+-- @param add_column boolean
 -- @return nil
-function FileLocation.copy_file_location(mode, add_line)
+function FileLocation.copy_file_location(mode, add_line, add_column)
   print(mode)
   -- add defaults for optional parameters
   mode = (mode == nil and global_config.mode) or mode
   add_line = (add_line == nil and global_config.add_line) or add_line
+  add_column = (add_column == nil and global_config.add_column) or add_column
 
-  local file_location = FileLocation.get_file_location(mode, add_line)
+  local file_location = FileLocation.get_file_location(mode, add_line, add_column)
   utils.copy_to_clipboard(file_location)
 end
 
@@ -57,13 +59,15 @@ end
 -- get file location
 -- @param mode string
 -- @param add_line boolean
+-- @param add_column boolean
 -- @return file_location string
-function FileLocation.get_file_location(mode, add_line)
+function FileLocation.get_file_location(mode, add_line, add_column)
   -- add defaults for optional parameters
   mode = (mode == nil and global_config.mode) or mode
   add_line = (add_line == nil and global_config.add_line) or add_line
+  add_column = (add_column == nil and global_config.add_column) or add_column
 
-  return utils.get_file_location(mode, add_line)
+  return utils.get_file_location(mode, add_line, add_column)
 end
 
 --------
