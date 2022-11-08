@@ -143,7 +143,7 @@ It's highly recommended to use it together with nvim-notify in order to get nice
 
 # 5. Changelog 📋
 
-All notable changes are listed here: [changelog](https://github.com/diegoulloao/nvim-file-location/blob/dev/CHANGELOG.md)
+All notable changes are listed here: [changelog](https://github.com/diegoulloao/nvim-file-location/blob/main/CHANGELOG.md)
 
 ---
 
