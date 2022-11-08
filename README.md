@@ -129,7 +129,7 @@ vim.keymap.set("n", "<leader>fl",  "<cmd>lua NvimFileLocation.copy_file_location
 nnoremap <leader>fl :lua NvimFileLocation.copy_file_location("absolute", true, false)<cr>
 ```
 
-Where params are:
+Where params are (optional):
 
 ```lua
 NvimFileLocation.copy_file_location(mode, add_line, add_column)
