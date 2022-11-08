@@ -141,7 +141,11 @@ NvimFileLocation.copy_file_location(mode, add_line, add_column)
 
 It's highly recommended to use it together with nvim-notify in order to get nice notifications 😍
 
-# 5. Development 👾
+# 5. Changelog
+
+All notable changes are listed here: [changelog](https://github.com/diegoulloao/nvim-file-location/blob/dev/CHANGELOG.md)
+
+# 6. Development 👾
 
 Navigate to the project folder and open nvim with:
 
