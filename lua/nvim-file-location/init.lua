@@ -45,7 +45,6 @@ end
 -- @param add_column boolean
 -- @return nil
 function FileLocation.copy_file_location(mode, add_line, add_column)
-  print(mode)
   -- add defaults for optional parameters
   mode = (mode == nil and global_config.mode) or mode
   add_line = (add_line == nil and global_config.add_line) or add_line
