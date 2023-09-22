@@ -7,7 +7,7 @@
 
 ```
 
-/ Simple nvim plugin that copies the exact file location where the cursor is · written in lua 😼 /
+| Simple nvim plugin that copies the exact file location where the cursor is · written in lua 😼 |
 
 ---
 
