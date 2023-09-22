@@ -70,6 +70,7 @@ nvim_file_location.setup({
   mode = "workdir", -- options: workdir | absolute
   add_line = true,
   add_column = false,
+  default_register = "*",
 })
 ```
 
@@ -93,6 +94,10 @@ Let's take the workdir mode for this example:
 
 - `true`: `pages/index.ts:25:11`
 - `false`: `pages/index.ts:25`
+
+### register string
+
+The register to use (default is the global system register)
 
 **Defaults options:**
 

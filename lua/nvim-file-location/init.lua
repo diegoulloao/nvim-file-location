@@ -43,15 +43,17 @@ end
 -- @param mode string
 -- @param add_line boolean
 -- @param add_column boolean
+-- @param register string
 -- @return nil
-function FileLocation.copy_file_location(mode, add_line, add_column)
+function FileLocation.copy_file_location(mode, add_line, add_column, register)
   -- add defaults for optional parameters
   mode = (mode == nil and global_config.mode) or mode
   add_line = (add_line == nil and global_config.add_line) or add_line
   add_column = (add_column == nil and global_config.add_column) or add_column
+  register = (register == nil and global_config.default_register) or register
 
   local file_location = FileLocation.get_file_location(mode, add_line, add_column)
-  utils.copy_to_clipboard(file_location)
+  utils.copy_to_clipboard(file_location, register)
 end
 
 --------

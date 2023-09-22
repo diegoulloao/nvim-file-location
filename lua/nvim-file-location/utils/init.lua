@@ -66,8 +66,8 @@ end
 -- copies the file location to the clipboard
 -- @param file_location string
 -- @return nil
-function Utils.copy_to_clipboard(file_location)
-  local status, _ = pcall(vim.cmd, string.format([[ let @*="%s" ]], file_location))
+function Utils.copy_to_clipboard(file_location, register)
+  local status, _ = pcall(vim.fn.setreg, register, file_location)
   if not status then
     vim.notify("Error: Location could not be copied.", vim.log.levels.ERROR, { title = "File Location" })
     return
