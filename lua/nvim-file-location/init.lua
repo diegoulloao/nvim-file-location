@@ -17,7 +17,7 @@ local global_config
 -- main module
 -- @module FileLocation
 local FileLocation = {}
-FileLocation._VERSION = "1.1.0"
+FileLocation._VERSION = "1.2.0"
 
 --------
 -- setup plugin
