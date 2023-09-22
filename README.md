@@ -7,7 +7,7 @@
 
 ```
 
-Simple Nvim plugin that copies the exact file location where the cursor is 😼 - Written in Lua.
+/ Simple nvim plugin that copies the exact file location where the cursor is · written in lua 😼 /
 
 ---
 
@@ -95,9 +95,9 @@ Let's take the workdir mode for this example:
 - `true`: `pages/index.ts:25:11`
 - `false`: `pages/index.ts:25`
 
-### register string
+### register [string]
 
-The register to use (default is the global system register)
+The register to use (default is the global system register `"*"`)
 
 **Defaults options:**
 
@@ -107,6 +107,7 @@ The register to use (default is the global system register)
   mode = "workdir",
   add_line = true,
   add_column = false,
+  default_register = "*",
 }
 ```
 
@@ -137,7 +138,7 @@ nnoremap <leader>fl :lua NvimFileLocation.copy_file_location("absolute", true, f
 Where params are (optional):
 
 ```lua
-NvimFileLocation.copy_file_location(mode, add_line, add_column)
+NvimFileLocation.copy_file_location(mode, add_line, add_column, register)
 ```
 
 # 4. Integrations 💎
@@ -152,4 +153,4 @@ All notable changes are listed here: [changelog](https://github.com/diegoulloao/
 
 ---
 
-**diegoulloao · 2022**
+**diegoulloao · 2023**
